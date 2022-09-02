@@ -49,7 +49,8 @@ const displayCategoryNews = (news) => {
             <span>${allNews.author.published_date}</span>
             <span style="font-weight:bold;">&nbsp;&nbsp;&nbsp; Views: ${
               allNews.total_view
-            }</span></div>
+            }</span>
+            <span style="color:blue;font-weight:bold;">&nbsp;&nbsp;&nbsp; -></span></div>
           </div>
         </div>
         
