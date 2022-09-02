@@ -42,11 +42,14 @@ const displayCategoryNews = (news) => {
           <div class="flex">
             <div><img src="${
               allNews.author.img
-            }" alt="" width="60" height="40" style="border-radius: 50%;"></div> &nbsp; &nbsp;
+            }" alt="" width="50" height="30" style="border-radius: 50%;"></div> &nbsp; &nbsp;
             <div><span style="color:purple;font-weight:bold;">${
               allNews.author.name
             }</span><br>
-            <span>${allNews.author.published_date}</span></div>
+            <span>${allNews.author.published_date}</span>
+            <span style="font-weight:bold;">&nbsp;&nbsp;&nbsp; Views: ${
+              allNews.total_view
+            }</span></div>
           </div>
         </div>
         
