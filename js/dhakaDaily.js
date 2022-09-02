@@ -39,7 +39,17 @@ const displayCategoryNews = (news) => {
               ? allNews.details.slice(0, 100) + "..."
               : allNews.details
           }</p>
+          <div class="flex">
+            <div><img src="${
+              allNews.author.img
+            }" alt="" width="60" height="40" style="border-radius: 50%;"></div> &nbsp; &nbsp;
+            <div><span style="color:purple;font-weight:bold;">${
+              allNews.author.name
+            }</span><br>
+            <span>${allNews.author.published_date}</span></div>
+          </div>
         </div>
+        
     `;
     categoryNews.appendChild(newsDiv);
   });
