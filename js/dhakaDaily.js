@@ -27,6 +27,8 @@ const displayCategoryNews = (news) => {
   const categoryNews = document.getElementById("news-body");
   categoryNews.textContent = "";
   news.forEach((allNews) => {
+    // const { details, title, thumbnail_url} = allNews;
+
     const newsDiv = document.createElement("div");
     newsDiv.innerHTML = `
         <div class="card-body">
@@ -44,19 +46,65 @@ const displayCategoryNews = (news) => {
               allNews.author.img
             }" alt="" width="50" height="30" style="border-radius: 50%;"></div> &nbsp; &nbsp;
             <div><span style="color:purple;font-weight:bold;">${
-              allNews.author.name
+              allNews.author.name ? allNews.author.name : "Author not found"
             }</span><br>
-            <span>${allNews.author.published_date}</span>
-            <span style="font-weight:bold;">&nbsp;&nbsp;&nbsp; Views: ${
+            <span>${
+              allNews.author.published_date
+                ? allNews.author.published_date
+                : "Date not found"
+            }</span>
+            <span style="font-weight:bold;">&nbsp;&nbsp; Views: ${
               allNews.total_view
             }</span>
-            <span style="color:blue;font-weight:bold;">&nbsp;&nbsp;&nbsp; -></span></div>
+            <label for="my-modal-6" onclick = "displayModal('${
+              allNews._id
+            }')" class="btn btn-link modal-button">-></label>
           </div>
         </div>
-        
     `;
     categoryNews.appendChild(newsDiv);
   });
+};
+
+const displayModal = (id) => {
+  // const showModal = document.getElementById("modal-body");
+  // showModal.textContent = "";
+  // showModal.innerHTML = `
+  // <p>${details}</p>
+  // <img src="${thumbnail_url}" alt="" width="200" height="10"> <br>
+  // <h5 class="card-title">${title}</h5>
+  // `;
+  const url = `https://openapi.programming-hero.com/api/news/${id}`;
+  fetch(url)
+    .then((res) => res.json())
+    .then((data) => showNewsDetails(data.data));
+};
+
+const showNewsDetails = (news) => {
+  const showModal = document.getElementById("modal-body");
+  // console.log(news[0]);
+  showModal.innerHTML = `
+  <img src="${news[0].image_url}" alt="" width="600" height="400"> <br>
+  <div class="flex">
+    <div>
+    <img src="${
+      news[0].author.img
+    }" alt="" width="50" height="30" style="border-radius: 50%;">
+    </div> &nbsp; &nbsp;
+    <div><span style="color:purple;font-weight:bold;">${
+      news[0].author.name ? news[0].author.name : "Author not found"
+    }</span><br>
+    <span>${
+      news[0].author.published_date
+        ? news[0].author.published_date
+        : "Date not found"
+    }</span>
+    </div>
+  </div> 
+  <br>
+  <h6 class="card-title">${news[0].title}</h6> <br>
+  <p><span style="font-weight:bold;">Read Details:</span> ${news[0].details}</p>
+  `;
 };
 
 loadCategory();
