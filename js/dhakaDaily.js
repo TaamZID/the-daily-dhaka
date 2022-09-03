@@ -5,10 +5,16 @@ const loadCategory = async () => {
   displayCategory(data.data.news_category);
 };
 
+// const spinnerL = document.getElementById("spinner");
+// spinnerL.classList.remove("hidden");
+// spinnerL.classList.add("hidden");
+
 const displayCategory = (categories) => {
   const categoryName = document.getElementById("category");
+
   categories.forEach((category) => {
     const categoryDiv = document.createElement("li");
+
     categoryDiv.innerHTML = `
     <li><a onclick = "newsByCategory('${category.category_id}')" >${category.category_name}</a></li>
     `;
@@ -18,19 +24,32 @@ const displayCategory = (categories) => {
 
 const newsByCategory = (id) => {
   const url = `https://openapi.programming-hero.com/api/news/category/${id}`;
+
   fetch(url)
     .then((res) => res.json())
-    .then((data) => displayCategoryNews(data.data));
+    .then((data) => displayCategoryNews(data.data))
+    .catch((error) => console.log(error));
+
+  try {
+    const res = fetch("https://jsonplaceholder.typicode.com/users");
+    const data = res.json();
+    console.log(data);
+  } catch {}
 };
 
 const displayCategoryNews = (news) => {
+  const spinnerL = document.getElementById("spinner");
+  spinnerL.classList.remove("hidden");
   const categoryNews = document.getElementById("news-body");
+
   const itemsFound = document.getElementById("items-found");
   itemsFound.innerHTML = news.length > 0 ? news.length : "No data found";
+
   categoryNews.textContent = "";
 
   news.forEach((allNews) => {
     const newsDiv = document.createElement("div");
+
     newsDiv.innerHTML = `
         <div class="card-body">
          <div>
@@ -63,8 +82,10 @@ const displayCategoryNews = (news) => {
           </div>
         </div>
     `;
+
     categoryNews.appendChild(newsDiv);
   });
+  spinnerL.classList.add("hidden");
 };
 
 const displayModal = (id) => {
