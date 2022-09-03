@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>The Dhaka Daily</title>
+    <title>Blogs</title>
     <link
       href="https://cdn.jsdelivr.net/npm/daisyui@2.24.0/dist/full.css"
       rel="stylesheet"
@@ -12,10 +12,9 @@
     />
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
-  <body class="px-20 py-2" id="timeline" name="timeline">
-    <!-- header starts -->
-
-    <header>
+  <body class="px-20 py-2">
+    <section id="timeline" name="timeline">
+        <header>
       <div class="navbar bg-base-100 font-serif">
         <div class="flex-1">
           <a class="btn btn-ghost normal-case text-xl text-blue-600">
@@ -58,35 +57,6 @@
       </div>
 
       <hr />
-
-      <ul
-        id="category"
-        class="menu menu-horizontal bg-base-100 rounded-box font-serif ml-20"
-      ></ul>
-    </header>
-
-    <!-- header ends -->
-
-    <!-- news body starts -->
-
-    <div id="news-body" class="grow grid grid-cols-3 gap-4"></div>
-
-    <!-- news body ends -->
-
-    <!-- modal starts -->
-
-    <input type="checkbox" id="my-modal-6" class="modal-toggle" />
-    <div class="modal modal-bottom sm:modal-middle">
-      <div class="modal-box">
-        <div id="modal-body"></div>
-        <div class="modal-action">
-          <label for="my-modal-6" class="btn">OK</label>
-        </div>
-      </div>
-    </div>
-
-    <!-- modal ends -->
-
-    <script src="js/dhakaDaily.js"></script>
+    </section>
   </body>
 </html>
