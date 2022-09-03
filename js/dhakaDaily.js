@@ -27,8 +27,6 @@ const displayCategoryNews = (news) => {
   const categoryNews = document.getElementById("news-body");
   categoryNews.textContent = "";
   news.forEach((allNews) => {
-    // const { details, title, thumbnail_url} = allNews;
-
     const newsDiv = document.createElement("div");
     newsDiv.innerHTML = `
         <div class="card-body">
@@ -67,13 +65,6 @@ const displayCategoryNews = (news) => {
 };
 
 const displayModal = (id) => {
-  // const showModal = document.getElementById("modal-body");
-  // showModal.textContent = "";
-  // showModal.innerHTML = `
-  // <p>${details}</p>
-  // <img src="${thumbnail_url}" alt="" width="200" height="10"> <br>
-  // <h5 class="card-title">${title}</h5>
-  // `;
   const url = `https://openapi.programming-hero.com/api/news/${id}`;
   fetch(url)
     .then((res) => res.json())
@@ -82,7 +73,6 @@ const displayModal = (id) => {
 
 const showNewsDetails = (news) => {
   const showModal = document.getElementById("modal-body");
-  // console.log(news[0]);
   showModal.innerHTML = `
   <img src="${news[0].image_url}" alt="" width="600" height="400"> <br>
   <div class="flex">
@@ -98,6 +88,9 @@ const showNewsDetails = (news) => {
       news[0].author.published_date
         ? news[0].author.published_date
         : "Date not found"
+    }</span>
+    <span style="font-weight:bold;">"&nbsp; Views: ${
+      news[0].total_view ? news[0].total_view : "No Views"
     }</span>
     </div>
   </div> 
