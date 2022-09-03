@@ -89,7 +89,7 @@ const showNewsDetails = (news) => {
         ? news[0].author.published_date
         : "Date not found"
     }</span>
-    <span style="font-weight:bold;">"&nbsp; Views: ${
+    <span style="font-weight:bold;">&nbsp; Views: ${
       news[0].total_view ? news[0].total_view : "No Views"
     }</span>
     </div>
@@ -99,5 +99,4 @@ const showNewsDetails = (news) => {
   <p><span style="font-weight:bold;">Read Details:</span> ${news[0].details}</p>
   `;
 };
-
 loadCategory();

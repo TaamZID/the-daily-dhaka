@@ -1,0 +1,9 @@
+a:active {
+  color: blue;
+  background-color: transparent;
+  text-decoration: none;
+}
+a[tabindex]:focus {
+  color: blue;
+  outline: none;
+}
