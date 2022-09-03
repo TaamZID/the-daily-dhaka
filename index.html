@@ -64,10 +64,19 @@
       ></ul>
       <br />
       <progress id="spinner" class="progress w-full hidden"></progress>
-      <br>
+      <br />
       <div class="bg-slate-200 rounded-box p-2">
-        <h2 class="text-xl font-semibold ml-40">
+        <h2 class="font-serif text-xl font-semibold ml-40">
           Items found : <span id="items-found"></span>
+        </h2>
+      </div>
+      <br />
+      <div class="rounded-box p-2">
+        <h2 class="font-serif">
+          <span class="font-serif text-xl font-bold ml-40 "
+            >Sorted by Views:</span
+          >
+          <span class="bg-slate-100 rounded p-1">Default</span>
         </h2>
       </div>
     </header>
@@ -76,7 +85,10 @@
 
     <!-- news body starts -->
 
-    <div id="news-body" class="grow grid grid-cols-3 gap-4"></div>
+    <div
+      id="news-body"
+      class="grow grid grid-cols-3 gap-4"
+    ></div>
 
     <!-- news body ends -->
 

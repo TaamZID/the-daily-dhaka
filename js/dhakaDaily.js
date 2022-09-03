@@ -31,7 +31,8 @@ const newsByCategory = (id) => {
     .catch((error) => console.log(error));
 
   try {
-    const res = fetch("https://jsonplaceholder.typicode.com/users");
+    const url = `https://openapi.programming-hero.com/api/news/category/${id}`;
+    const res = fetch(url);
     const data = res.json();
     console.log(data);
   } catch {}
@@ -44,6 +45,10 @@ const displayCategoryNews = (news) => {
 
   const itemsFound = document.getElementById("items-found");
   itemsFound.innerHTML = news.length > 0 ? news.length : "No data found";
+
+  news.sort((a, b) => {
+    return b.total_view - a.total_view;
+  });
 
   categoryNews.textContent = "";
 

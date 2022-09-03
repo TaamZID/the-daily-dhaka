@@ -60,5 +60,104 @@
 
       <hr />
     </section>
+    <section class="mt-10 ml-20 font-serif">
+        <h1 class="mt-10 ml-20 font-serif font-bold text-xl">1. What are the differences between var, let, and const?</h1>
+        <p class="ml-20 font-serif">Ans. 
+        <div class="mt-2 ml-20 mr-20 overflow-x-auto">
+            <table class="table w-full">
+                <!-- head -->
+                <thead>
+                <tr>
+                    <th></th>
+                    <th>Var</th>
+                    <th>Let</th>
+                    <th>Const</th>
+                </tr>
+                </thead>
+                <tbody>
+                <!-- row 1 -->
+                <tr>
+                    <th>1</th>
+                    <td>The scope of a var variable is functional scope.</td>
+                    <td>The scope of a let variable is block scope.</td>
+                    <td>The scope of a const variable is block scope.</td>
+                </tr>
+                <!-- row 2 -->
+                <tr>
+                    <th>2</th>
+                    <td>It can be updated and re-declared into the scope.</td>
+                    <td>It can be updated but cannot be re-declared into the scope.</td>
+                    <td>It cannot be updated or re-declared into the scope.</td>
+                </tr>
+                <!-- row 3 -->
+                <tr>
+                    <th>3</th>
+                    <td>It can be declared without initialization.</td>
+                    <td>It can be declared without initialization.</td>
+                    <td>It cannot be declared without initialization.</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        </p>
+
+        <h1 class="mt-10 ml-20 font-serif font-bold text-xl">2. What are the differences between arrow function and regular function?</h1>
+        <p class="ml-20 font-serif">Ans. 
+        <div class="mt-2 ml-20 mr-20 overflow-x-auto">
+            <table class="table w-full">
+                <!-- head -->
+                <thead>
+                <tr>
+                    <th></th>
+                    <th>Arrow function</th>
+                    <th>Regular function</th>
+                </tr>
+                </thead>
+                <tbody>
+                <!-- row 1 -->
+                <tr>
+                    <th>Syntax</th>
+                    <td>var add = function(x, y) {return x + y;};</td>
+                    <td>let add = (x, y) => { return x + y };</td>
+                    
+                </tr>
+                <!-- row 2 -->
+                <tr>
+                    <th>Arguments binding</th>
+                    <td>let myFunc = { showArgs(){ console.log(arguments);}};myFunc.showArgs(1, 2, 3, 4);</td>
+                    <td>let myFunc = { showArgs : () => {console.log(...arguments);}};myFunc.showArgs(1, 2, 3, 4);</td>
+                    
+                </tr>
+                <!-- row 3 -->
+                <tr>
+                    <th>Using new keyword</th>
+                    <td>Regular functions are constructible and callable.</td>
+                    <td>Not constructible and callable. let add = (x, y) => console.log(x + y);new add(2,3);</td>
+                    
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        </p>
+
+        <h1 class="mt-10 ml-20 font-serif font-bold text-xl">3. Why do we use template string?</h1>
+        <p class="ml-20 font-serif mr-20 mb-5 mt-2"> <span class="font-semibold">Ans.</span> 
+        Template strings are a powerful feature of modern JavaScript released in ES6. It lets us 
+        insert/interpolate variables and expressions into strings without needing to concatenate 
+        like in older versions of JavaScript. It allows us to create strings that are complex and 
+        contain dynamic elements.
+        </p>
+        
+    </section>
+    <!-- footer starts -->
+
+    <footer>
+      <br />
+      <hr />
+      <br />
+      <h3 class="text-center font-semibold">Copyright @2022 The Dhaka Daily</h3>
+    </footer>
+
+    <!-- footer ends -->
   </body>
 </html>
