@@ -54,7 +54,7 @@ const displayCategoryNews = (news) => {
                 : "Date not found"
             }</span>
             <span style="font-weight:bold;">&nbsp;&nbsp; Views: ${
-              allNews.total_view
+              allNews.total_view ? allNews.total_view : "No Views"
             }</span>
             <label for="my-modal-6" onclick = "displayModal('${
               allNews._id
