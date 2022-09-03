@@ -25,7 +25,10 @@ const newsByCategory = (id) => {
 
 const displayCategoryNews = (news) => {
   const categoryNews = document.getElementById("news-body");
+  const itemsFound = document.getElementById("items-found");
+  itemsFound.innerHTML = news.length > 0 ? news.length : "No data found";
   categoryNews.textContent = "";
+
   news.forEach((allNews) => {
     const newsDiv = document.createElement("div");
     newsDiv.innerHTML = `
